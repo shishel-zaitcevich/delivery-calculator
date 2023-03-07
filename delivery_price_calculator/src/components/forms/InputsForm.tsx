@@ -95,7 +95,7 @@ export function NumberForms() {
           <div className={''}>
             <button>Submit</button>
           </div>
-          <output name="result">delivery price is {values.deliveryFee}</output>
+          <output name="result">delivery fee is {values.deliveryFee}</output>
         </form>
 
         <div className={''}>
