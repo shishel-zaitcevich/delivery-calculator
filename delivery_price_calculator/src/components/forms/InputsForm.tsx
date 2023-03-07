@@ -1,24 +1,34 @@
+import { Calculation } from 'components/Calculation';
 import { InputTypes } from 'components/Types';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 
 export function NumberForms() {
   const {
     register,
     handleSubmit,
-    watch,
-    setValue,
+    reset,
+    getValues,
     formState: { errors },
-  } = useForm<InputTypes>({ mode: 'onChange' });
+  } = useForm<InputTypes>({
+    mode: 'onChange',
+    defaultValues: {
+      orderPrice: 0,
+      distance: 0,
+      quantity: 0,
+      dateTime: '',
+    },
+  });
+  const values: InputTypes = getValues();
+  console.log(values);
 
-  const submitHandler: SubmitHandler<InputTypes> = (data) => {
-    console.log(data);
+  Calculation(values);
+
+  const submitHandler: SubmitHandler<InputTypes> = () => {};
+
+  const resetHandler: SubmitHandler<InputTypes> = () => {
+    reset();
   };
-
-  const [orderPrice, setOrderPrice] = useState('');
-  const [distance, setDistance] = useState('');
-  const [quantity, setQuantity] = useState('');
-  const [dateTime, setDateTime] = useState('');
 
   return (
     <>
@@ -74,7 +84,7 @@ export function NumberForms() {
             {<p> {errors.quantity && errors.quantity.message}</p>}
           </div>
           <div>
-            <label htmlFor="meeting-time">Choose a time for your delivery:</label>
+            <label htmlFor="dateTime">Choose a time for your delivery:</label>
             <input
               type="datetime-local"
               id="delivery-time"
@@ -85,9 +95,14 @@ export function NumberForms() {
           <div className={''}>
             <button>Submit</button>
           </div>
-
-          <output name="result">delivery price is ....</output>
+          <output name="result">delivery price is {values.deliveryFee}</output>
         </form>
+
+        <div className={''}>
+          <button type="reset" onClick={handleSubmit(resetHandler)}>
+            Reset
+          </button>
+        </div>
       </div>
     </>
   );

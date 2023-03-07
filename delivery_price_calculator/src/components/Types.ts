@@ -3,4 +3,5 @@ export interface InputTypes {
   distance: number;
   quantity: number;
   dateTime: string;
+  deliveryFee: number;
 }
