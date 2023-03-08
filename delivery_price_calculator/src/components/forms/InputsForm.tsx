@@ -5,7 +5,6 @@ import { SubmitHandler, useForm } from 'react-hook-form';
 import { Paper, Typography, Button } from '@mui/material';
 import { FormInputText } from './FormInputText';
 import BasicDateTimePicker from './FormInputDate';
-// import ResponsiveDatePickers from './FormInputDate';
 
 export function NumberForms() {
   const {
@@ -49,8 +48,6 @@ export function NumberForms() {
             <FormInputText name="distance" control={control} label="Delivery distance" />
             <FormInputText name="quantity" control={control} label="Amount of items" />
             <BasicDateTimePicker name="dateTime" control={control} label="" />
-
-            {/* <ResponsiveDatePickers /> */}
 
             <Button onClick={handleSubmit(submitHandler)} variant={'contained'}>
               {' '}

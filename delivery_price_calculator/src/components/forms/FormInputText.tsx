@@ -1,9 +1,7 @@
 import { TextField } from '@mui/material';
-import { InputTypes } from 'components/Types';
+import { FormInputProps, InputTypes } from 'components/Types';
 import React, { useState } from 'react';
 import { Controller, useForm, useFormContext, useFormState } from 'react-hook-form';
-
-import { FormInputProps } from './FormInputProps';
 
 export const FormInputText = ({ name, control, label }: FormInputProps) => {
   const [names, setName] = useState();
