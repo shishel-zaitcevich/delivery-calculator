@@ -2,11 +2,16 @@ import { Calculation } from 'components/Calculation';
 import { InputTypes } from 'components/Types';
 import React from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
+import { Paper, Typography, Button } from '@mui/material';
+import { FormInputText } from './FormInputText';
+import BasicDateTimePicker from './FormInputDate';
+// import ResponsiveDatePickers from './FormInputDate';
 
 export function NumberForms() {
   const {
     register,
     handleSubmit,
+    control,
     reset,
     getValues,
     formState: { errors },
@@ -26,82 +31,38 @@ export function NumberForms() {
 
   const submitHandler: SubmitHandler<InputTypes> = () => {};
 
-  const resetHandler: SubmitHandler<InputTypes> = () => {
-    reset();
-  };
-
   return (
     <>
-      <div className={''}>
-        <form className={''} onSubmit={handleSubmit(submitHandler)}>
-          <h2>Delivery fee calculator</h2>
-          <div className={''}>
-            <label>Order Price {`(€)`}</label>
-            <input
-              placeholder="10"
-              autoComplete="off"
-              className={''}
-              {...register('orderPrice', {
-                required: 'Field is required',
-                pattern: {
-                  value: /^[0-9]+$/i,
-                  message: 'Only numbers can be used',
-                },
-              })}
-            />
-            {<p> {errors.orderPrice && errors.orderPrice.message}</p>}
-          </div>
-          <div className={''}>
-            <label>Distance {`(m)`}</label>
-            <input
-              placeholder="1000"
-              autoComplete="off"
-              className={''}
-              {...register('distance', {
-                required: 'Field is required',
-                pattern: {
-                  value: /^[0-9]+$/i,
-                  message: 'Only numbers  can be used',
-                },
-              })}
-            />
-            {<p> {errors.distance && errors.distance.message}</p>}
-          </div>
-          <div className={''}>
-            <label>Quantity {`(pieces)`}</label>
-            <input
-              placeholder="1000"
-              autoComplete="off"
-              className={''}
-              {...register('quantity', {
-                required: 'Field is required',
-                pattern: {
-                  value: /^[0-9]+$/i,
-                  message: 'Only numbers can be used',
-                },
-              })}
-            />
-            {<p> {errors.quantity && errors.quantity.message}</p>}
-          </div>
-          <div>
-            <label htmlFor="dateTime">Choose a time for your delivery:</label>
-            <input
-              type="datetime-local"
-              id="delivery-time"
-              {...register('dateTime', { required: true })}
-            />
-            {errors.dateTime && <p>Field is required</p>}
-          </div>
-          <div className={''}>
-            <button>Submit</button>
-          </div>
+      <div className={'container'}>
+        <form onSubmit={handleSubmit(submitHandler)}>
+          <Paper
+            style={{
+              display: 'grid',
+              gridRowGap: '20px',
+              padding: '20px',
+              margin: '10px 300px',
+            }}
+          >
+            <Typography variant="h6"> Delivery fee calculator</Typography>
+
+            <FormInputText name="orderPrice" control={control} label="Cart value" />
+            <FormInputText name="distance" control={control} label="Delivery distance" />
+            <FormInputText name="quantity" control={control} label="Amount of items" />
+            <BasicDateTimePicker name="dateTime" control={control} label="" />
+
+            {/* <ResponsiveDatePickers /> */}
+
+            <Button onClick={handleSubmit(submitHandler)} variant={'contained'}>
+              {' '}
+              Calculate delivery price{' '}
+            </Button>
+            <Button onClick={() => reset()} variant={'outlined'}>
+              {' '}
+              Reset{' '}
+            </Button>
+            <output name="result">delivery fee is {values.deliveryFee} €</output>
+          </Paper>
         </form>
-        <output name="result">delivery fee is {values.deliveryFee} €</output>
-        <div className={''}>
-          <button type="reset" onClick={handleSubmit(resetHandler)}>
-            Reset
-          </button>
-        </div>
       </div>
     </>
   );

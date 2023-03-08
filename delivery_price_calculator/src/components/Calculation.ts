@@ -55,17 +55,22 @@ export function Calculation(values: InputTypes) {
     const date = new Date(Date.parse(values.dateTime));
     let weekDay = '';
     let time = '';
-    // console.log(date);
+    console.log(date);
     function getWeekDay(date: Date) {
       const days = ['SUN', 'MON', 'TUE', 'WEN', 'THI', 'FRI', 'SUT'];
       weekDay = days[date.getDay()];
+      console.log(weekDay);
       return weekDay;
     }
 
     getWeekDay(date);
 
     function getTime(values: InputTypes) {
-      time = values.dateTime.slice(11, 16);
+      const valueHours = date.getHours();
+      const valueMinutes = date.getMinutes();
+      time = valueHours + ' ' + valueMinutes;
+      console.log(time);
+
       return time;
     }
 
