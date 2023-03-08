@@ -1,6 +1,6 @@
 import { Calculation } from 'components/Calculation';
 import { InputTypes } from 'components/Types';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 
 export function NumberForms() {
