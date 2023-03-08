@@ -20,7 +20,7 @@ export function NumberForms() {
     },
   });
   const values: InputTypes = getValues();
-  console.log(values);
+  // console.log(values);
 
   Calculation(values);
 
@@ -95,9 +95,8 @@ export function NumberForms() {
           <div className={''}>
             <button>Submit</button>
           </div>
-          <output name="result">delivery fee is {values.deliveryFee}</output>
         </form>
-
+        <output name="result">delivery fee is {values.deliveryFee} €</output>
         <div className={''}>
           <button type="reset" onClick={handleSubmit(resetHandler)}>
             Reset
