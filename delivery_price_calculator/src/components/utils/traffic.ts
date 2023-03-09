@@ -1,5 +1,5 @@
-import { getTime } from './GetTime';
-import { getWeekDay } from './GetWeekDay';
+import { getTime } from './getTime';
+import { getWeekDay } from './getWeekDay';
 
 export function traffic(dateTime: string) {
   const date = new Date(Date.parse(dateTime));

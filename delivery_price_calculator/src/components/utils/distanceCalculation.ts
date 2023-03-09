@@ -1,6 +1,6 @@
-import { baseDeliveryPrice } from './BaseDeliveryPrice';
+import { baseDeliveryPrice } from './baseDeliveryPrice';
 
-export function DistanceCalculation(distance: number, orderPrice: number, quantity: number) {
+export function distanceCalculation(distance: number, orderPrice: number, quantity: number) {
   const rate = 1;
   const baseFee = baseDeliveryPrice(orderPrice, quantity);
   let additionalDistanceFee = 0;

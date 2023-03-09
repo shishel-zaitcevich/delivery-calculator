@@ -1,6 +1,6 @@
-import { LessTenEuroAdd } from './LessTenEurosAdd';
+import { lessTenEuroAdd } from './lessTenEurosAdd';
 
-export function CartCalculation(quantity: number, orderPrice: number) {
+export function cartCalculation(quantity: number, orderPrice: number) {
   const additionQuantity = quantity - 4;
   let cartAddionalFee = 0;
   let cartFee = 0;
@@ -16,7 +16,7 @@ export function CartCalculation(quantity: number, orderPrice: number) {
   }
 
   if (orderPrice > 0 && orderPrice < 10) {
-    cartFee = cartAddionalFee + LessTenEuroAdd(orderPrice);
+    cartFee = cartAddionalFee + lessTenEuroAdd(orderPrice);
   } else if (orderPrice >= 10) {
     cartFee = cartAddionalFee;
   }

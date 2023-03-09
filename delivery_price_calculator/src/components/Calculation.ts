@@ -1,13 +1,13 @@
 import { InputTypes } from './Types';
-import { CartCalculation } from './calculateFunctions/CartCalculation';
-import { DistanceCalculation } from './calculateFunctions/DistanceCalculation';
-import { baseDeliveryPrice } from './calculateFunctions/BaseDeliveryPrice';
-import { traffic } from './calculateFunctions/Traffic';
+import { cartCalculation } from './utils/cartCalculation';
+import { distanceCalculation } from './utils/distanceCalculation';
+import { baseDeliveryPrice } from './utils/baseDeliveryPrice';
+import { traffic } from './utils/traffic';
 
 export function Calculation(values: InputTypes) {
   const baseFee = baseDeliveryPrice(values.orderPrice, values.quantity);
-  const cartFee = CartCalculation(values.quantity, values.orderPrice);
-  const additionalDistanceFee = DistanceCalculation(
+  const cartFee = cartCalculation(values.quantity, values.orderPrice);
+  const additionalDistanceFee = distanceCalculation(
     values.distance,
     values.orderPrice,
     values.quantity
