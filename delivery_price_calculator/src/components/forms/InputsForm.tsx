@@ -8,7 +8,6 @@ import BasicDateTimePicker from './FormInputDate';
 
 export function NumberForms() {
   const {
-    register,
     handleSubmit,
     control,
     reset,
@@ -47,7 +46,7 @@ export function NumberForms() {
             <FormInputText name="orderPrice" control={control} label="Cart value" />
             <FormInputText name="distance" control={control} label="Delivery distance" />
             <FormInputText name="quantity" control={control} label="Amount of items" />
-            <BasicDateTimePicker name="dateTime" control={control} label="" />
+            <BasicDateTimePicker name="dateTime" label="" control={control} />
 
             <Button onClick={handleSubmit(submitHandler)} variant={'contained'}>
               {' '}

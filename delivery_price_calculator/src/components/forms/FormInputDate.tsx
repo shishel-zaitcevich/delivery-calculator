@@ -4,7 +4,7 @@ import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DateTimePicker } from '@mui/x-date-pickers/DateTimePicker';
 
-import { Controller } from 'react-hook-form';
+import { Controller, useForm } from 'react-hook-form';
 import { FormInputProps } from 'components/Types';
 
 export default function BasicDateTimePicker({ name, control }: FormInputProps) {

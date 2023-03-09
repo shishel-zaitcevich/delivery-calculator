@@ -1,3 +1,5 @@
+import { Control, FieldValues } from 'react-hook-form';
+
 export interface InputTypes {
   orderPrice: number;
   distance: number;
@@ -8,7 +10,9 @@ export interface InputTypes {
 
 export interface FormInputProps {
   name: string;
-  control: object;
+  control?: Control<ControlField>;
   label: string;
   setValue?: string;
 }
+
+export type ControlField = FieldValues | any; //тип any прописан в документации к react-hook-form

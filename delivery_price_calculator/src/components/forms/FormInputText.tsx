@@ -1,26 +1,9 @@
 import { TextField } from '@mui/material';
-import { FormInputProps, InputTypes } from 'components/Types';
-import React, { useState } from 'react';
-import { Controller, useForm, useFormContext, useFormState } from 'react-hook-form';
+import { FormInputProps } from 'components/Types';
+import React from 'react';
+import { Controller } from 'react-hook-form';
 
 export const FormInputText = ({ name, control, label }: FormInputProps) => {
-  const [names, setName] = useState();
-  const {
-    register,
-    handleSubmit,
-    reset,
-    watch,
-    formState: { errors },
-  } = useForm();
-  // const { ref, ...rest } = register('name', { required: true });
-
-  // const currentName = watch('name');
-
-  // function onSubmit(data: FormInputProps) {
-  //   setName(data.name);
-  //   reset();
-  // }
-
   return (
     <Controller
       name={name}
