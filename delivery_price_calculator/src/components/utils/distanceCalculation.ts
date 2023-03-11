@@ -9,6 +9,6 @@ export function distanceCalculation(distance: number, orderPrice: number, quanti
     const additionalDistance = Math.ceil(distance / 500 - baseFee);
     additionalDistanceFee = additionalDistance * rate;
   }
-  // console.log(additionalDistanceFee);
+
   return additionalDistanceFee;
 }

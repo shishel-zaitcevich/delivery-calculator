@@ -8,14 +8,15 @@ export const FormInputText = ({ name, control, label }: FormInputProps) => {
     <Controller
       name={name}
       control={control}
+      rules={{
+        required: true,
+        pattern: /^[0-9]+$/i,
+      }}
       render={({ field: { onChange, value }, fieldState: { error }, formState }) => (
         <TextField
-          error={value === ''}
-          helperText={value === '' ? 'Please enter a value!' : ' '}
-          // required={true}
-          // helperText={error ? error.message : null}
-          // size="small"
-          // error={!!error}
+          helperText={error ? 'Please, enter a value or use numbers' : null}
+          error={!!error}
+          size="small"
           onChange={onChange}
           value={value}
           fullWidth

@@ -7,10 +7,8 @@ export function cartCalculation(quantity: number, orderPrice: number) {
 
   if (quantity >= 5 && quantity <= 12) {
     cartAddionalFee = additionQuantity * 0.5;
-    // console.log('from 5 to 12', cartAddionalFee);
   } else if (quantity >= 13) {
     cartAddionalFee = additionQuantity * 0.5 + 1.2;
-    // console.log('>12', cartAddionalFee);
   } else {
     cartAddionalFee = 0;
   }

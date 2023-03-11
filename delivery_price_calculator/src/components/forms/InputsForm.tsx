@@ -22,8 +22,8 @@ export function NumberForms() {
       dateTime: '',
     },
   });
+
   const values: InputTypes = getValues();
-  // console.log(values);
 
   Calculation(values);
 
@@ -32,13 +32,14 @@ export function NumberForms() {
   return (
     <>
       <div className={'container'}>
+        <img src={require('../../assets/Take_Away.gif')} alt="gif..." />
         <form onSubmit={handleSubmit(submitHandler)}>
           <Paper
             style={{
               display: 'grid',
               gridRowGap: '20px',
               padding: '20px',
-              margin: '10px 300px',
+              margin: '10px 150px',
             }}
           >
             <Typography variant="h6"> Delivery fee calculator</Typography>
@@ -56,7 +57,8 @@ export function NumberForms() {
               {' '}
               Reset{' '}
             </Button>
-            <output name="result">delivery fee is {values.deliveryFee} €</output>
+
+            <Typography variant="h4">Delivery fee is {values.deliveryFee.toFixed(2)} €</Typography>
           </Paper>
         </form>
       </div>
