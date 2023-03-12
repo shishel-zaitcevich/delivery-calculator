@@ -1,7 +1,7 @@
 {
   "name": "delivery_price_calculator",
   "version": "0.1.0",
-  "homepage": "https://shishel-zaitcevich.github.io/delivery-calculator/delivery_price_calculator",
+  "homepage": ".",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.10.6",
@@ -25,7 +25,7 @@
   },
   "scripts": {
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d ./build -e delivery_price_calculator",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
