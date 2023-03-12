@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/delivery-calculator/static/css/main.85bf580b.css",
+    "main.js": "/delivery-calculator/static/js/main.ef7a1e1a.js",
+    "static/media/Take_Away.gif": "/delivery-calculator/static/media/Take_Away.b66a4f9fb673e0d42c5f.gif",
+    "index.html": "/delivery-calculator/index.html",
+    "main.85bf580b.css.map": "/delivery-calculator/static/css/main.85bf580b.css.map",
+    "main.ef7a1e1a.js.map": "/delivery-calculator/static/js/main.ef7a1e1a.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.85bf580b.css",
+    "static/js/main.ef7a1e1a.js"
+  ]
+}
