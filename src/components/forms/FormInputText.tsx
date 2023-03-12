@@ -11,6 +11,7 @@ export const FormInputText = ({ name, control, label }: FormInputProps) => {
       rules={{
         required: true,
         pattern: /^[0-9]+$/i,
+        min: 1,
       }}
       render={({ field: { onChange, value }, fieldState: { error }, formState }) => (
         <TextField
