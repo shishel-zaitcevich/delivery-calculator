@@ -1,7 +1,7 @@
 {
   "name": "delivery_price_calculator",
   "version": "0.1.0",
-  "homepage": "https://shishel-zaitcevich.github.io/delivery-calculator",
+  "homepage": ".",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.10.6",
