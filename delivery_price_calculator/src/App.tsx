@@ -1,4 +1,4 @@
-import { NumberForms } from 'components/forms/InputsForm';
+import { NumberForms } from '../src/components/forms/InputsForm';
 
 import React from 'react';
 

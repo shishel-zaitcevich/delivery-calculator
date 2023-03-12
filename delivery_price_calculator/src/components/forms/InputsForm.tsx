@@ -1,5 +1,5 @@
-import { Calculation } from 'components/Calculation';
-import { InputTypes } from 'components/Types';
+import { Calculation } from '../Calculation';
+import { InputTypes } from '../Types';
 import React from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { Paper, Typography, Button } from '@mui/material';

@@ -1,5 +1,5 @@
 import { TextField } from '@mui/material';
-import { FormInputProps } from 'components/Types';
+import { FormInputProps } from '../Types';
 import React from 'react';
 import { Controller } from 'react-hook-form';
 
