@@ -14,7 +14,7 @@ export const FormInputText = ({ name, control, label }: FormInputProps) => {
       }}
       render={({ field: { onChange, value }, fieldState: { error }, formState }) => (
         <TextField
-          helperText={error ? 'Please, enter a value or use numbers' : null}
+          helperText={error ? 'Please, enter a value or use numbers more than 0' : null}
           error={!!error}
           size="small"
           onChange={onChange}

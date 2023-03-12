@@ -4,11 +4,13 @@ export function cartCalculation(quantity: number, orderPrice: number) {
   const additionQuantity = quantity - 4;
   let cartAddionalFee = 0;
   let cartFee = 0;
+  const baseCofficient = 0.5;
+  const addCofficient = 1.2;
 
   if (quantity >= 5 && quantity <= 12) {
-    cartAddionalFee = additionQuantity * 0.5;
+    cartAddionalFee = additionQuantity * baseCofficient;
   } else if (quantity >= 13) {
-    cartAddionalFee = additionQuantity * 0.5 + 1.2;
+    cartAddionalFee = additionQuantity * baseCofficient + addCofficient;
   } else {
     cartAddionalFee = 0;
   }

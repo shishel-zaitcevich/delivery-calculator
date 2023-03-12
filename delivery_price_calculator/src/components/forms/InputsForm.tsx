@@ -16,9 +16,9 @@ export function NumberForms() {
   } = useForm<InputTypes>({
     mode: 'onChange',
     defaultValues: {
-      orderPrice: 0,
-      distance: 0,
-      quantity: 0,
+      orderPrice: 1,
+      distance: 1,
+      quantity: 1,
       dateTime: '',
     },
   });

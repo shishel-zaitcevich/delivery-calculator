@@ -1,4 +1,5 @@
 export function lessTenEuroAdd(orderPrice: number) {
-  const tenEuroadd = 10 - orderPrice;
+  const minCartValue = 10;
+  const tenEuroadd = minCartValue - orderPrice;
   return tenEuroadd;
 }
