@@ -18,6 +18,7 @@ export const FormInputText = ({ name, control, label }: FormInputProps) => {
           helperText={error ? 'Please, enter a value or use numbers more than 0' : null}
           error={!!error}
           size="small"
+          type="number"
           onChange={onChange}
           value={value}
           fullWidth

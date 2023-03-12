@@ -5,8 +5,9 @@ export function distanceCalculation(distance: number, orderPrice: number, quanti
   const baseFee = baseDeliveryPrice(orderPrice, quantity);
   let additionalDistanceFee = 0;
   const additionalMeters = 500;
+  const basePriceDistance = 1000;
 
-  if (distance > 1000) {
+  if (distance > basePriceDistance) {
     const additionalDistance = Math.ceil(distance / additionalMeters - baseFee);
     additionalDistanceFee = additionalDistance * rate;
   }

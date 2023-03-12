@@ -13,15 +13,21 @@ export function Calculation(values: InputTypes) {
     values.quantity
   );
   const isTraffic = traffic(values.dateTime);
-
-  if (values.orderPrice >= 100) {
-    values.deliveryFee = 0;
-  }
+  const cartPriceForFreeDelivery = 100;
+  const freeDelivery = 0;
+  const maxDeliveryPrice = 15;
 
   values.deliveryFee = (additionalDistanceFee + cartFee + baseFee) * isTraffic;
 
-  if (values.deliveryFee > 15) {
-    values.deliveryFee = 15;
+  if (values.orderPrice >= cartPriceForFreeDelivery) {
+    values.deliveryFee = freeDelivery;
+  }
+  if (values.deliveryFee > maxDeliveryPrice) {
+    values.deliveryFee = maxDeliveryPrice;
+  }
+
+  if (values.dateTime === '') {
+    values.deliveryFee = freeDelivery;
   }
 
   return values.deliveryFee;
