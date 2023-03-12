@@ -1,6 +1,7 @@
 {
   "name": "delivery_price_calculator",
   "version": "0.1.0",
+  "homepage": "https://shishel-zaitcevich.github.io/delivery-calculator",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.10.6",
@@ -23,11 +24,12 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d ./build -e delivery_price_calculator",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "deploy": "gh-pages -d ./build -e delivery_price_calculator"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
@@ -51,6 +53,7 @@
     "eslint-config-airbnb-typescript": "^17.0.0",
     "eslint-config-prettier": "^8.6.0",
     "eslint-plugin-prettier": "^4.2.1",
+    "gh-pages": "^5.0.0",
     "prettier": "^2.8.4"
   }
 }
